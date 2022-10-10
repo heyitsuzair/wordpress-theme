@@ -14,10 +14,15 @@ class AQUILA_THEME
 {
     use Singleton;
 
+
     protected function __construct()
     {
 
-        wp_die('hello');
+        /**
+         @get_instance(): To Load Classes
+         */
+
+        Assets::get_instance();
 
         $this->setup_hooks();
     }
