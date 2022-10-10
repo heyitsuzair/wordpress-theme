@@ -6,6 +6,7 @@
  * @package aquila
  */
 ?>
+
 <!DOCTYPE html>
 <html lang="<?php language_attributes(); ?>">
 
