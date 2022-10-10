@@ -22,4 +22,8 @@
         wp_body_open();
     }
     ?>
-    <header>Header</header>
+    <div id="page">
+        <header id="master-header" class="header-aquila">
+            <?php get_template_part('./template-parts/header/MainHeader'); ?>
+        </header>
+        <div id="content">
