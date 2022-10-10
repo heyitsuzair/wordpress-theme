@@ -29,5 +29,14 @@ class AQUILA_THEME
 
     protected function setup_hooks()
     {
+        /**
+         * Actions
+         */
+        add_action('after_setup_theme', [$this, 'setupTheme']);
+    }
+
+    public function setupTheme()
+    {
+        add_theme_support('title-tag');
     }
 }
