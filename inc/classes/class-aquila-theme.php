@@ -46,5 +46,12 @@ class AQUILA_THEME
             'flex-height' => true,
             'flex-width' => true,
         ]);
+
+        add_theme_support('custom-background', [
+            'default-color' => 'white',
+            'default-image' => '',
+            'default-repeat'  => 'no-repeat',
+            'default-position-x'  => 'center',
+        ]);
     }
 }
