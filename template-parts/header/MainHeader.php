@@ -8,7 +8,13 @@
 ?>
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand text-light" href="#">Navbar</a>
+        <a class="navbar-brand text-light" href="#"><?php
+                                                    if (function_exists('the_custom_logo')) {
+                                                        the_custom_logo();
+                                                    } else {
+                                                        get_the_title();
+                                                    }
+                                                    ?></a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
