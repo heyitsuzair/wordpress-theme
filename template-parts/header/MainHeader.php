@@ -5,7 +5,24 @@
  * 
  * @package aquila
  */
+
+use AQUILA_THEME\Inc\Menus;
+
 ?>
+
+<?php
+$menu_class = Menus::get_instance();
+
+// passing theme location
+$header_menu_id = $menu_class->getMenuId('aquila_header_menu');
+
+$header_menus = wp_get_nav_menu_items($header_menu_id);
+echo '<pre>';
+var_dump($header_menus);
+
+wp_die();
+?>
+
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="#"><?php
@@ -34,11 +51,3 @@
         </div>
     </div>
 </nav>
-<?php
-wp_nav_menu(
-    array(
-        'theme_location' => 'aquila_header_menu',
-        'container_class' => 'my_menu_class'
-    )
-);
-?>

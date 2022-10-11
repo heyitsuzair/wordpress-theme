@@ -20,6 +20,7 @@ class Menus
     {
 
         $this->setup_hooks();
+        $this->setup_hooks();
     }
 
     public function setup_hooks()
@@ -39,5 +40,17 @@ class Menus
                 'aquila_footer_menu' => esc_html('Footer Menu', 'aquila')
             ]
         );
+    }
+
+    public function getMenuId($location)
+    {
+        // Get All The Locations Available In Site
+
+        $locations = get_nav_menu_locations();
+
+        // Get The Object Id By Location
+        $menu_id = $locations[$location];
+
+        return !empty($menu_id) ? $menu_id : "";
     }
 }
