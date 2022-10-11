@@ -53,5 +53,32 @@ class AQUILA_THEME
             'default-repeat'  => 'no-repeat',
             'default-position-x'  => 'center',
         ]);
+
+        add_theme_support('post-thumbnails');
+
+        add_theme_support('customize-selective-refresh-widgets');
+
+        add_theme_support('automatic-feed-links');
+
+        add_theme_support('html5', [
+            'search_form',
+            'comment-form',
+            'gallery',
+            'caption',
+            'script',
+            'style'
+        ]);
+
+        add_editor_style();
+
+        add_theme_support('wp-block-styles');
+
+        add_theme_support('align-wide');
+
+        global $content_width;
+
+        if (!isset($content_width)) {
+            $content_width = 1240;
+        }
     }
 }
