@@ -35,21 +35,21 @@ get_header();
                     while (have_posts()) : the_post();
                     ?>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <h3><?php the_title(); ?></h3>
-                    <div><?php the_excerpt(); ?></div>
+                    <?php get_template_part('./template-parts/content') ?>
                 </div>
                 <?php
                     endwhile;
+                    get_template_part('./template-parts/content-none');
                     ?>
             </div>
         </div>
         <?php
         } else {
-        ?>
-        <h1>No Posts Found</h1>
-        <?php
+            get_template_part('./template-parts/content-none');
         }
         ?>
+
+
     </main>
 </div>
 
