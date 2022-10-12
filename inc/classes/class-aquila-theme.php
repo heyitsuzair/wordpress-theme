@@ -76,6 +76,8 @@ class AQUILA_THEME
 
         add_theme_support('align-wide');
 
+        add_image_size('featured-thumbnail', 350, 233, true);
+
         global $content_width;
 
         if (!isset($content_width)) {

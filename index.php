@@ -39,7 +39,6 @@ get_header();
                 </div>
                 <?php
                     endwhile;
-                    get_template_part('./template-parts/content-none');
                     ?>
             </div>
         </div>
