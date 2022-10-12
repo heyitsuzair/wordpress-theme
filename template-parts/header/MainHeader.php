@@ -21,7 +21,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
 ?>
 
 <nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand text-light" href="#"><?php
                                                     if (function_exists('the_custom_logo')) {
                                                         the_custom_logo();
