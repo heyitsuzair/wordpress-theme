@@ -27,6 +27,7 @@ class Meta_Boxes
          */
 
         add_action('add_meta_boxes', [$this, 'addMetaBoxes']);
+        add_action('save_post', [$this, 'savePost']);
     }
 
     public function addMetaBoxes()
@@ -47,12 +48,28 @@ class Meta_Boxes
         $value = get_post_meta($post->ID, '_hide_page_title', true);
 ?>
 <label for="aquila_field"><?php esc_html_e('Hide Page Title', 'aquila'); ?></label>
-<select name="aquila_field" id="aquila-field" class="postbox">
+<select name="aquila_hide_title_field" id="aquila-field" class="postbox">
     <option value=""><?php esc_html_e('Select', 'aquila'); ?></option>
     <option value="yes" <?php selected($value, 'yes'); ?>><?php esc_html_e('Yes', 'aquila'); ?></option>
     <option value="no" <?php selected($value, 'no'); ?>><?php esc_html_e('No', 'aquila'); ?></option>
 </select>
 <?php
 
+    }
+
+    public function savePost($post_id)
+    {
+        /**
+        First @param on array_key_exists is the "name" attribute of field from which data is coming in our case it is select with name="aquila_hide_title_field"
+        Second @param of update_post_meta is "meta_key" that you have to put when you called "get_post_meta". Its Second Param is "meta_key"
+         */
+
+        if (array_key_exists('aquila_hide_title_field', $_POST)) {
+            update_post_meta(
+                $post_id,
+                '_hide_page_title',
+                $_POST['aquila_hide_title_field']
+            );
+        }
     }
 }
