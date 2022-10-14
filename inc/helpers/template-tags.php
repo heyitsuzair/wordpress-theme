@@ -41,7 +41,29 @@ function aquila_posted_on()
         esc_attr(get_the_modified_date()),
     );
 
-    $posted_on = sprintf(esc_html_x('Posted On %s', 'post date', 'aquila'), '<a href="' . esc_url(get_the_permalink()) . '" rel="bookmark">' . $time_string . '</a>');
+    $posted_on = sprintf(esc_html_x('Posted On %s', 'post date', 'aquila'), '<a class="td-none" href="' . esc_url(get_the_permalink()) . '" rel="bookmark">' . $time_string . '</a>');
 
     echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
+}
+
+function aquila_posted_by()
+{
+    $byline = sprintf(esc_html_x(' By %s', 'post author', 'aquila'), '<span class="author vcard"><a href=' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '>' . esc_html(get_the_author()) . '</a></span>');
+
+    echo '<span class="byline text-secondary">' . $byline . '</span>';
+}
+
+function aquila_the_excerpt($trim_char_count = 0)
+{
+    if (!has_excerpt() || $trim_char_count === 0) {
+        the_excerpt();
+        return;
+    }
+
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+
+    $excerpt = substr($excerpt, 0, $trim_char_count);
+    $excerpt = substr($excerpt, 0, strrpos($excerpt, ''));
+
+    echo $excerpt . '[...]';
 }

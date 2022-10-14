@@ -19,3 +19,18 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* Global */
+.td-none {
+  text-decoration: none;
+}
+
+/* Entry Meta */
+.updated:not(.published) {
+  display: none;
+}
+
+/* Navbar */
+.nav-item:hover .dropdown-menu:not(.show) {
+  display: block;
+}
