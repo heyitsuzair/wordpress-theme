@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="entry-content">
+<div class="entry-content d-flex flex-column">
     <?php
     if (is_single()) {
         the_content(sprintf(wp_kses(
@@ -21,6 +21,7 @@
         )));
     } else {
         aquila_the_excerpt(50);
+        echo aquila_excerpt_more();
     }
     ?>
 </div>
