@@ -17,8 +17,8 @@
                     'class' => []
                 ],
             ],
-            the_title('<span class="screen-reader-text">', '</span>', false)
-        )));
+
+        ), the_title('<span class="screen-reader-text">', '</span>', false)));
     } else {
         aquila_the_excerpt(50);
         echo aquila_excerpt_more();
