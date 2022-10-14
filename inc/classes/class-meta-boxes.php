@@ -46,6 +46,11 @@ class Meta_Boxes
     public function customMetaBoxHtml($post)
     {
         $value = get_post_meta($post->ID, '_hide_page_title', true);
+        /**
+         * Use Nonce Verification
+         */
+
+        wp_nonce_field(plugin_basename(__FILE__), 'hide_title_meta_box_nonce');
 ?>
 <label for="aquila_field"><?php esc_html_e('Hide Page Title', 'aquila'); ?></label>
 <select name="aquila_hide_title_field" id="aquila-field" class="postbox">
@@ -63,6 +68,19 @@ class Meta_Boxes
         First @param on array_key_exists is the "name" attribute of field from which data is coming in our case it is select with name="aquila_hide_title_field"
         Second @param of update_post_meta is "meta_key" that you have to put when you called "get_post_meta". Its Second Param is "meta_key"
          */
+
+        /**
+         * When Post is saved or updated we get $_POST available
+         * Check If Current User Is Authorized To Do This
+         */
+
+        if (!current_user_can('edit_post')) return;
+
+        /**
+         * Check If The Nonce Value We Received Is Same We Created
+         */
+
+        if (!isset($_POST['hide_title_meta_box_nonce']) || !wp_verify_nonce($_POST['hide_title_meta_box_nonce'], plugin_basename(__FILE__))) return;
 
         if (array_key_exists('aquila_hide_title_field', $_POST)) {
             update_post_meta(
