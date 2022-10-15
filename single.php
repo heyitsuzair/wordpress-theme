@@ -38,7 +38,9 @@ get_header();
                 get_template_part('./template-parts/content-none');
             }
             ?>
-
+            <?php
+            aquila_pagination();
+            ?>
         </div>
     </main>
 </div>

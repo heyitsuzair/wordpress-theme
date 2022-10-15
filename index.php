@@ -39,6 +39,7 @@ get_header();
                 </div>
                 <?php
                     endwhile;
+
                     ?>
             </div>
         </div>
@@ -47,7 +48,12 @@ get_header();
             get_template_part('./template-parts/content-none');
         }
         ?>
+        <div class="container">
 
+            <?php
+            aquila_pagination();
+            ?>
+        </div>
 
     </main>
 </div>
