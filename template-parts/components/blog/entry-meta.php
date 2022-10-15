@@ -2,6 +2,7 @@
 
 /** Template for post entry header
  * 
+ *  To Be Used Inside WordPress "The Loop"
  * 
  * @package aquila
  */
