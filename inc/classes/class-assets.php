@@ -60,6 +60,7 @@ class Assets
          */
 
         wp_register_script('script-1', AQUILA_DIR_URI . '/assets/js/index.js', ['jquery'], filemtime(AQUILA_DIR_PATH . '/assets/js/index.js'), true);
+        wp_register_script('clock_widget', AQUILA_DIR_URI . '/assets/js/clock/index.js', ['jquery'], filemtime(AQUILA_DIR_PATH . '/assets/js/clock/index.js'), true);
         wp_register_script('bootstrap_js', AQUILA_DIR_URI . '/assets/libraries/bootstrap/bootstrap.bundle.min.js', ['jquery'], false, true);
 
         /**
@@ -69,5 +70,6 @@ class Assets
 
         wp_enqueue_script('script-1');
         wp_enqueue_script('bootstrap_js');
+        wp_enqueue_script('clock_widget');
     }
 }
