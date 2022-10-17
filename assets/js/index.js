@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
-  $ = jQuery;
-  // alert("Hello");
-});
+import "./clock";
+
+// Images
+import "../images/1460px-React_logo (1).png";

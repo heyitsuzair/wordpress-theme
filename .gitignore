@@ -28,3 +28,5 @@ sftp-config.json
 *.sublime-project
 *.sublime-workspace
 /vendor/
+assets/node_modules
+assets/build
