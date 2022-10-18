@@ -33,27 +33,59 @@ class Block_Patterns
     public function registerPatterns()
     {
         if (function_exists('register_block_pattern')) {
+
+            /**
+             * Cover Pattern
+             */
+
+            $cover_content = $this->getPatternContent('template-parts/patterns/cover');
+
             register_block_pattern(
                 'aquila/cover',
                 [
                     'title'       => __('Aquila Cover', 'aquila'),
                     'description' => _x('Aquila Cover Block With Image And Text', 'aquila'),
                     'categories' => ['cover'],
-                    'content'     => '<!-- wp:cover {"url":"http://localhost/wordpress_theme/wp-content/uploads/2022/10/1460px-React_logo-1-1-1.png","id":18,"dimRatio":50,"isDark":false,"align":"wide"} -->
-                    <div class="wp-block-cover alignwide is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-18" alt="" src="http://localhost/wordpress_theme/wp-content/uploads/2022/10/1460px-React_logo-1-1-1.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
-                    <p class="has-text-align-center has-large-font-size">My Block Pattern</p>
-                    <!-- /wp:paragraph --></div></div>
-                    <!-- /wp:cover -->',
+                    'content'     => $cover_content,
+                ]
+            );
+
+            /**
+             * Two Columns Pattern
+             */
+
+            $columns_content = $this->getPatternContent('template-parts/patterns/two_columns');
+
+            register_block_pattern(
+                'aquila/two_columns',
+                [
+                    'title'       => __('Aquila Columns', 'aquila'),
+                    'description' => _x('Aquila Two Columns', 'aquila'),
+                    'categories' => ['columns'],
+                    'content'     => $columns_content,
                 ]
             );
         }
+    }
+
+    public function getPatternContent($template_path)
+    {
+        ob_start();
+
+        get_template_part($template_path);
+
+        $pattern_content = ob_get_contents();
+
+        ob_end_clean();
+
+        return $pattern_content;
     }
 
     public function registerPatternsCategories()
     {
         $pattern_categories = [
             'cover' => __('Cover', 'aquila'),
-            'carousel' => 'Carousel',
+            'columns' => __('Columns', 'aquila'),
         ];
         if (function_exists('register_block_pattern_category')) {
             foreach ($pattern_categories as $category => $label) {
