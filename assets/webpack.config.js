@@ -13,6 +13,7 @@ const Uglify = require("uglifyjs-webpack-plugin");
 const entry = {
   index: JS_DIR + "/index.js",
   single: JS_DIR + "/single.js",
+  editor: JS_DIR + "/editor.js",
 };
 const output = {
   path: BUILD_DIR,

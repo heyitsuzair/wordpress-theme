@@ -26,6 +26,7 @@ class AQUILA_THEME
         Menus::get_instance();
         Meta_Boxes::get_instance();
         Sidebars::get_instance();
+        Block_Patterns::get_instance();
         $this->setup_hooks();
     }
 
@@ -34,6 +35,7 @@ class AQUILA_THEME
         /**
          * Actions
          */
+
         add_action('after_setup_theme', [$this, 'setupTheme']);
     }
 
@@ -71,13 +73,17 @@ class AQUILA_THEME
             'style'
         ]);
 
-        add_editor_style();
-
         add_theme_support('wp-block-styles');
 
         add_theme_support('align-wide');
 
         add_image_size('featured-thumbnail', 350, 233, true);
+
+        /**
+         * Add The Path For The Custom Editor Style
+         */
+
+        add_editor_style('assets/build/css/editor.css');
 
         global $content_width;
 
