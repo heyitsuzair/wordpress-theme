@@ -11,6 +11,9 @@ if (!defined('AQUILA_DIR_PATH')) {
 if (!defined('AQUILA_DIR_URI')) {
     define('AQUILA_DIR_URI', untrailingslashit(get_template_directory_uri()));
 }
+if (!defined('AQUILA_BUILD_PATH')) {
+    define('AQUILA_BUILD_PATH', untrailingslashit(get_template_directory() . '/assets/build'));
+}
 if (!defined('AQUILA_BUILD_URI')) {
     define('AQUILA_BUILD_URI', untrailingslashit(get_template_directory_uri() . '/assets/build'));
 }
