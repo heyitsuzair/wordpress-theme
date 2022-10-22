@@ -8,6 +8,7 @@ const Edit = () => {
       "core/group",
       {
         className: "aquila-dos-and-donts__group",
+        backgroundColor: "cyan-bluish-gray",
       },
       blockColumns,
     ],
