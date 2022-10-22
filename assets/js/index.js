@@ -1,8 +1,9 @@
-import './clock';
+import "./clock";
+import "./carousel";
 
 // Css
-import '../sass/index.scss';
+import "../sass/index.scss";
 
 // Images
-import '../images/1460px-React_logo (1).png';
-import '../images/patterns/cover.png';
+import "../images/1460px-React_logo (1).png";
+import "../images/patterns/cover.png";
