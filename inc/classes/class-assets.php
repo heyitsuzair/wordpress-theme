@@ -43,6 +43,10 @@ class Assets
 
         wp_register_style('stylesheet-2', get_stylesheet_uri(), [], filemtime(AQUILA_DIR_PATH . '/style.css'), 'all');
 
+        wp_register_style('slick_css', AQUILA_DIR_URI . '/assets/libraries/slick/css/slick.css', [], false, 'all');
+
+        wp_register_style('slick_theme_css', AQUILA_DIR_URI . '/assets/libraries/slick/css/slick-theme.css', ['slice_css'], false, 'all');
+
         wp_register_style('bootstrap_css', AQUILA_DIR_URI . '/assets/libraries/bootstrap/bootstrap.min.css', [], false, 'all');
 
         wp_register_style('index.scss', AQUILA_BUILD_CSS_URI . '/index.css', ['bootstrap_css'], filemtime(AQUILA_BUILD_CSS_DIR_PATH . '/index.css'), 'all');
@@ -55,6 +59,8 @@ class Assets
         wp_enqueue_style('bootstrap_css');
         wp_enqueue_style('stylesheet-2');
         wp_enqueue_style('index.scss');
+        wp_enqueue_style('slick_css');
+        wp_enqueue_style('slick_theme_css');
     }
 
     public function registerScripts()
@@ -68,12 +74,16 @@ class Assets
 
         wp_register_script('bootstrap_js', AQUILA_DIR_URI . '/assets/libraries/bootstrap/bootstrap.bundle.min.js', ['jquery'], false, true);
 
+        wp_register_script('slick_min_js', AQUILA_DIR_URI . '/assets/libraries/slick/js/slick.min.js', [], false, true);
+
         /**
          * JavaScript Enqueue
          * @package aquila
          */
 
+        wp_enqueue_script('bootstrap_js');
         wp_enqueue_script('index.js');
+        wp_enqueue_script('slick_min_js');
     }
 
     public function registerBlockAssets()

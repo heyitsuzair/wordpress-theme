@@ -37,4 +37,4 @@
     <footer class="entry-footer">
         <?php edit_post_link(esc_html__('Edit', 'aquila'), '<span class="edit-link">', '</span>'); ?>
     </footer><!-- .entry-footer -->
-</article><!-- #post-## --
+</article><!-- #post-## -->
