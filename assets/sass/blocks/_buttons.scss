@@ -1,0 +1,44 @@
+/* stylelint-disable */
+.editor-styles-wrapper .wp-block-button,
+.wp-block-button {
+
+	// Style variation for 'layout-border-blue-fill'
+	&.is-style-layout-border-blue-fill {
+
+		.wp-block-button__link {
+			border: 1px solid lightblue;
+			background-color: blue !important;
+			color: white !important;
+			padding: 8px 30px;
+			border-radius: 3px;
+		}
+	}
+
+	// Style variation for 'layout-border-white-no-fill'
+	&.is-style-layout-border-white-no-fill {
+
+		.wp-block-button__link {
+			border: 1px solid white;
+			background-color: transparent !important;
+			color: white !important;
+			padding: 8px 30px;
+			border-radius: 3px;
+		}
+	}
+}
+
+// Style variation block settings preview styles.
+.block-editor-block-styles__item[aria-label="White Outline - Used With Dark Background"] {
+	.block-editor-block-styles__item-preview,
+	.block-editor-block-list__layout.is-root-container {
+		background-color: blue;
+
+		.wp-block-button.is-style-layout-border-white-no-fill {
+			.wp-block-button__link {
+				background-color: blue;
+			}
+		}
+	}
+}
+
+/* stylelint-enable */

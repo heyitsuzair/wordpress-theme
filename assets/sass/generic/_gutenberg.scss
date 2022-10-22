@@ -1,16 +1,16 @@
-.home-page-wrap{
-    .entry-content{
-        & > *{
-            margin: $margin_top auto $margin_bottom auto;
-        }
-        & > *:not(.alignfull){
-            max-width: $site_width;
-            padding-left: $padding_left;
-            padding-right: $padding_right;
-        
-        }
-        & > .alignwide{
-            max-width: $wide_width;
-        }
-    }
+.home-page-wrap {
+	.entry-content {
+		& > * {
+			margin: $margin_top auto $margin_bottom auto;
+		}
+		& > *:not(.alignfull) {
+			max-width: $site_width;
+			padding-left: $padding_left;
+			padding-right: $padding_right;
+
+		}
+		& > .alignwide {
+			max-width: $wide_width;
+		}
+	}
 }
