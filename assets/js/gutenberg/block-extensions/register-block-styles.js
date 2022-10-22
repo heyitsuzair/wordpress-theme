@@ -2,7 +2,7 @@
  * Register Block Styles
  */
 
-import { registerBlockStyle } from "@wordpress/blocks";
+import { registerBlockStyle, unregisterBlockStyle } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
 
 const layoutStyleButton = [
@@ -16,10 +16,17 @@ const layoutStyleButton = [
   },
 ];
 
+const unRegister = () => {
+  unregisterBlockStyle("core/button", "outline");
+};
+
 const register = () => {
   layoutStyleButton.forEach((layoutStyle) => {
     registerBlockStyle("core/button", layoutStyle);
   });
 };
 
-wp.domReady(() => register());
+wp.domReady(() => {
+  register();
+  unRegister();
+});
