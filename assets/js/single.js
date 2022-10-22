@@ -1,2 +1,2 @@
 // Css
-import "../sass/single.scss";
+import '../sass/single.scss';

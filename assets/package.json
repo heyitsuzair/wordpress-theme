@@ -25,6 +25,9 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "eslint": "^8.26.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-jsdoc": "^39.3.17",
     "file-loader": "^6.2.0",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.6.1",
@@ -40,7 +43,9 @@
     "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
     "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
     "clean": "rm -rf build/*",
-    "svg":"svgr -d js/icons icons"
+    "svg": "svgr -d js/icons icons",
+    "lint":"eslint js/*",
+    "lint:fix":"eslint --fix js/*"
   },
   "dependencies": {}
 }

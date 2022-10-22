@@ -1,5 +1,5 @@
 // CSS
-import "../sass/blocks.scss";
+import '../sass/blocks.scss';
 
 // Blocks
-import "./gutenberg/blocks/headingwithicon";
+import './gutenberg/blocks/headingwithicon';
