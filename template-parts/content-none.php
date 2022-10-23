@@ -6,7 +6,6 @@
  * @package aquila
  */
 
-
 ?>
 
 <section class="no-result not-found">
