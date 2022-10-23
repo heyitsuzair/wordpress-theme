@@ -76,6 +76,11 @@ class Assets
 
         wp_register_script('slick_min_js', AQUILA_DIR_URI . '/assets/libraries/slick/js/slick.min.js', [], false, true);
 
+        wp_localize_script('index-js', 'siteConfig', [
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'ajax_nonce' => wp_create_nonce('loadmore_post_nonce')
+        ]);
+
         /**
          * JavaScript Enqueue
          * @package aquila

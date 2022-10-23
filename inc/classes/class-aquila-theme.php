@@ -28,6 +28,7 @@ class AQUILA_THEME
         Sidebars::get_instance();
         Block_Patterns::get_instance();
         Blocks::get_instance();
+        Loadmore_Post::get_instance();
         $this->setup_hooks();
     }
 
