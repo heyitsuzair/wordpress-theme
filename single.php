@@ -40,6 +40,7 @@ get_header();
                         } else {
                             get_template_part('./template-parts/content-none');
                         }
+                        echo do_shortcode('[single_post_listings]');
                         ?>
 
                     </div>
@@ -48,7 +49,7 @@ get_header();
                     <?php get_sidebar(); ?>
                 </div>
             </div>
-            <div class="prev-link">
+            <!-- <div class="prev-link">
                 <?php
                 previous_post_link();
                 ?>
@@ -57,7 +58,7 @@ get_header();
                 <?php
                 next_post_link();
                 ?>
-            </div>
+            </div> -->
         </div>
 
     </main>
