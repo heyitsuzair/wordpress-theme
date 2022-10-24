@@ -72,6 +72,8 @@ class Assets
 
         wp_register_script('index.js', AQUILA_BUILD_JS_URI . '/index.js', ['jquery'], filemtime(AQUILA_BUILD_JS_DIR_PATH . '/index.js'), true);
 
+        wp_register_script('single_js', AQUILA_BUILD_JS_URI . '/single.js', ['jquery'], filemtime(AQUILA_BUILD_JS_DIR_PATH . '/single.js'), true);
+
         wp_register_script('bootstrap_js', AQUILA_DIR_URI . '/assets/libraries/bootstrap/bootstrap.bundle.min.js', ['jquery'], false, true);
 
         wp_register_script('slick_min_js', AQUILA_DIR_URI . '/assets/libraries/slick/js/slick.min.js', [], false, true);
@@ -83,6 +85,7 @@ class Assets
 
         wp_enqueue_script('bootstrap_js');
         wp_enqueue_script('index.js');
+        is_single() ? wp_enqueue_script('single_js') : false;
         wp_enqueue_script('slick_min_js');
 
         wp_localize_script('index.js', 'siteConfig', [

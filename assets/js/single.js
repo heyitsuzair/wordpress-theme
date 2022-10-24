@@ -1,2 +1,5 @@
 // Css
-import '../sass/single.scss';
+import "../sass/single.scss";
+
+// Loadmore
+import "./posts/loadmore-single";

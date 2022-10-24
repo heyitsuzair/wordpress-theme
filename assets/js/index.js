@@ -1,6 +1,7 @@
 import "./clock";
 import "./carousel";
 import "./posts/loadmore";
+import "./posts/loadmore-single";
 
 // Css
 import "../sass/index.scss";
