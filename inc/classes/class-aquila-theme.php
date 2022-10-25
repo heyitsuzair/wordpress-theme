@@ -30,6 +30,7 @@ class AQUILA_THEME
         Blocks::get_instance();
         Loadmore_Post::get_instance();
         Loadmore_Single::get_instance();
+        Register_Post_Types::get_instance();
         $this->setup_hooks();
     }
 
