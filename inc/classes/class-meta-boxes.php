@@ -74,7 +74,7 @@ class Meta_Boxes
          * Check If Current User Is Authorized To Do This
          */
 
-        if (!current_user_can('edit_post')) return;
+        if (!current_user_can('edit_posts')) return;
 
         /**
          * Check If The Nonce Value We Received Is Same We Created
